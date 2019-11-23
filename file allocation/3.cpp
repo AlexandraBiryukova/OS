@@ -11,9 +11,9 @@ struct file{
 };
 
 int randomly(){
-	int r=random()%29;
+	int r=random()%30;
 	while(counts[r]!=" "){
-		r=random()%29;
+		r=random()%30;
 	}
 	cout<<"Random: "<<int(r)<<endl;
 	return int(r);	
@@ -43,6 +43,16 @@ int main(){
 	}
 	cout<<endl;
 	for(int i=0;i<directory.size();i++){
+		int emp=0;
+		for( int c=0;c<30;c++){
+			if(counts[c]==" "){
+				emp++;
+			}
+		}
+		if(emp<5){
+			cout<<"File < "<< directory[i].name<<" > can't be allocated\n";
+			continue;
+		}
 		if(counts[directory[i].index_block]!=" "){
 			directory[i].index_block=randomly();
 		}
