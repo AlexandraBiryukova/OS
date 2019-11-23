@@ -7,7 +7,7 @@ string counts[30];
 struct file{
 	string name;
 	int index_block;
-	int blocks[5];
+	int blocks[4];
 };
 
 int randomly(){
@@ -34,8 +34,8 @@ int main(){
 		}
 		cout<<"File index block: ";
 		cin>>f.index_block;
-		cout<<"File blocks (5): ";
-		for(int i=0;i<5;i++){
+		cout<<"File blocks (4): ";
+		for(int i=0;i<4;i++){
 			cin>>f.blocks[i];
 		}
 		directory.push_back(f);
@@ -57,7 +57,7 @@ int main(){
 			directory[i].index_block=randomly();
 		}
 		counts[directory[i].index_block]=directory[i].name;
-		for(int j=0;j<5;j++){
+		for(int j=0;j<4;j++){
 			if(directory[i].blocks[j]!=-1){
 				if(counts[directory[i].blocks[j]]!=" "){
 					int r=randomly();
@@ -82,6 +82,16 @@ int main(){
 			}
 		}
 		cout<<endl;
+
+		for(int i=0;i<directory.size();i++){
+			cout<<directory[i].name<<":endl";
+			for(int j=0;j<4;j++){
+				cout<<directory[i].index_block<<"->";
+				cout<<directory[i].blocks[j]<<endl;
+			}
+			
+			cout<<endl;
+		}
 	
 
 

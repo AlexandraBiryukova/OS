@@ -106,6 +106,16 @@ int main(){
 			}
 		}
 		cout<<endl;
+		for(int i=0;i<directory.size();i++){
+			cout<<directory[i].name<<": ";
+			for(int j=0;j<30;j++){
+				if(counts[j]==directory[i].name){
+					cout<<j<<" ";
+				}
+		}
+			
+			cout<<endl;
+		}
 	
 
 

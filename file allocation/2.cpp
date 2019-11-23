@@ -38,9 +38,10 @@ void display(Node* head) {
    struct Node* ptr;
    ptr = head;
    while (ptr != NULL) { 
-      cout<< ptr->data <<" "; 
+      cout<< ptr->data <<" <- "; 
       ptr = ptr->next; 
    } 
+   cout<<"head";
 } 
 
 int main(){
